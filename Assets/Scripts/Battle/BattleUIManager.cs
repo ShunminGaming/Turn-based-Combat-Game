@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BattleUIManager : MonoBehaviour
+{
+    [SerializeField] private Button skillButton1;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public bool AreSkillButtonsEnabled()
+    {
+        return skillButton1.interactable;
+    }
+
+    public void EnableSkillButtons()
+    {
+        if (skillButton1 != null)
+        {
+            skillButton1.interactable = true;
+        }
+    }
+
+    public void DisableSkillButtons()
+    {
+        if (skillButton1 != null)
+        {
+            skillButton1.interactable = false;
+        }
+    }
+}
