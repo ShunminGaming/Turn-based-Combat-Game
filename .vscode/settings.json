@@ -53,5 +53,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "Turn-based Combat 2024.sln"
+    "dotnet.defaultSolution": "Turn-based-Combat-Game.sln"
 }
