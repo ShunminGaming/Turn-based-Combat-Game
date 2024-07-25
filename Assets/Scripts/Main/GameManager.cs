@@ -5,7 +5,9 @@ public class GameManager : MonoBehaviour
 {
     void Start()
     {
-        
+        GameData.Instance.WarriorAttack = 1;
+        GameData.Instance.WarlockAttack = 1;
+        GameData.Instance.HealerAttack = 1;
     }
 
     void Update()
