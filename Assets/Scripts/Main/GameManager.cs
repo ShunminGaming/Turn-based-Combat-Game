@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private MainUIManager mainUIManager;
     void Start()
     {
         // 嘗試加載數值
@@ -14,8 +15,10 @@ public class GameManager : MonoBehaviour
             GameData.Instance.PlayerStats = new PlayerStats { WarriorHP = 100, WarlockHP = 80, HealerHP = 80, WarriorATK = 20, WarlockATK = 15, HealerATK = 10 };
         }
 
-        // 在這裡可以使用playerStats
-        
+        mainUIManager = GetComponent<MainUIManager>();
+
+        // 在這裡可以使用PlayerStats
+        mainUIManager.UpdateCharacterStats();
     }
 
     public void StartBattle()
