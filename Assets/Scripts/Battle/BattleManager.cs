@@ -10,8 +10,6 @@ public class BattleManager : MonoBehaviour
     private BattleUIManager battleUIManager;
     private int tempPlayerValue = 0;
     private int tempEnemyValue = 0;
-    //private bool victory = false;
-    //private bool defeat = false;
     private bool isPlayerActionCompleted = false;
     private bool isEnemyActionCompleted = false;
     
@@ -127,6 +125,7 @@ public class BattleManager : MonoBehaviour
 
     private void EndBattle()
     {
+        SaveSystem.Instance.SavePlayerStats(GameData.Instance.PlayerStats);
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 

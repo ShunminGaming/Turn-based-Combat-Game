@@ -14,17 +14,8 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public static GameData Instance { get; private set; }
-
-    public int WarriorAttack { get; set; }
-    public int WarlockAttack { get; set; }
-    public int HealerAttack { get; set; }
-    //攻擊力 = Attack
-    //防禦力 = Defense
-    //暴擊率 = Crit (Critical Rate)
-    //速度 = Speed
-    //魔法力 = Magic (Magic Power)
-    //治療力 = Heal (Healing Power)
-
+    public PlayerStats PlayerStats { get; set; }
+    
     private void Awake()
     {
         if (Instance == null)
@@ -39,3 +30,21 @@ public class GameData : MonoBehaviour
     }
 }
 
+[System.Serializable]
+public class PlayerStats
+{
+    //攻擊力ATK = Attack
+    //防禦力DEF = Defense
+    //暴擊率CRT = Crit (Critical Rate)
+    //速  度SPD = Speed
+    //魔法力MAG = Magic (Magic Power)
+    //治療力HEL = Heal (Healing Power)
+
+    public int WarriorHP;
+    public int WarlockHP;    
+    public int HealerHP;
+    public int WarriorATK;
+    public int WarlockATK;
+    public int HealerATK;
+    
+}

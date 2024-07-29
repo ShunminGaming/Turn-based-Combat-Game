@@ -5,13 +5,16 @@ public class GameManager : MonoBehaviour
 {
     void Start()
     {
-        GameData.Instance.WarriorAttack = 1;
-        GameData.Instance.WarlockAttack = 1;
-        GameData.Instance.HealerAttack = 1;
-    }
+        // 嘗試加載數值
+        GameData.Instance.PlayerStats = SaveSystem.Instance.LoadPlayerStats();
 
-    void Update()
-    {
+        // 如果沒有儲存檔案，創建新的數值
+        if (GameData.Instance.PlayerStats == null)
+        {
+            GameData.Instance.PlayerStats = new PlayerStats { WarriorHP = 100, WarlockHP = 80, HealerHP = 80, WarriorATK = 20, WarlockATK = 15, HealerATK = 10 };
+        }
+
+        // 在這裡可以使用playerStats
         
     }
 
@@ -23,5 +26,11 @@ public class GameManager : MonoBehaviour
     public void EndBattle()
     {
         SceneManager.UnloadSceneAsync("Battle");
+    }
+
+    private void OnApplicationQuit()
+    {
+        // 保存數值
+        SaveSystem.Instance.SavePlayerStats(GameData.Instance.PlayerStats);
     }
 }
